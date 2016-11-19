@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_one    :score
+
   has_many   :comments
 
   has_many   :images
