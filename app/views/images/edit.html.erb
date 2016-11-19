@@ -1,0 +1,73 @@
+<!-- Validation failure messages -->
+<% if @image.errors.any? %>
+  <% @image.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Image #<%= @image.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_image/<%= @image.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @image.user_id %>">
+      </div>
+
+      <!-- Label and input for price -->
+      <div class="form-group">
+        <label for="price" class="control-label">
+          Price
+        </label>
+
+        <input type="text" id="price" name="price" placeholder="Price" class="form-control" value="<%= @image.price %>">
+      </div>
+
+      <!-- Label and input for description -->
+      <div class="form-group">
+        <label for="description" class="control-label">
+          Description
+        </label>
+
+        <textarea id="description" name="description" placeholder="Description" class="form-control" rows="3"><%= @image.description %></textarea>
+      </div>
+
+      <!-- Label and input for response_time -->
+      <div class="form-group">
+        <label for="response_time" class="control-label">
+          Response time
+        </label>
+
+        <input type="text" id="response_time" name="response_time" placeholder="Response time" class="form-control" value="<%= @image.response_time %>">
+      </div>
+
+      <!-- Label and input for image_url -->
+      <div class="form-group">
+        <label for="image_url" class="control-label">
+          Image url
+        </label>
+
+        <input type="text" id="image_url" name="image_url" placeholder="Image url" class="form-control" value="<%= @image.image_url %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Image
+      </button>
+      or
+      <a href="/images/<%= @image.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
