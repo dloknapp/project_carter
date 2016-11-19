@@ -17,7 +17,7 @@
 
       <% @scores.each do |score| %>
       <tr>
-        <td><%= score.user_id %></td>
+        <td><%= score.user.email %></td>
         <td><%= score.poster_score %></td>
         <td><%= score.rater_score %></td>
         <td>
