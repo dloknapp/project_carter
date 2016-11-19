@@ -55,6 +55,48 @@
           </div>
 
           <div class="form-group">
+            <%= f.label :avatar_url, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+              <%= f.text_field :avatar_url, :class => "form-control", :placeholder => "Enter avatar url" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :username, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+              <%= f.text_field :username, :class => "form-control", :placeholder => "Enter username" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :city, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+              <%= f.text_field :city, :class => "form-control", :placeholder => "Enter city" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :state, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+              <%= f.text_field :state, :class => "form-control", :placeholder => "Enter state" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :gender, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+              <%= f.number_field :gender, :class => "form-control", :placeholder => "Enter gender" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :age, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+              <%= f.number_field :age, :class => "form-control", :placeholder => "Enter age" %>
+            </div>
+          </div>
+
+          <div class="form-group">
             <div class="col-sm-10 col-sm-offset-2">
               <%= f.submit "Update", class: "btn btn-success btn-block" %>
             </div>
