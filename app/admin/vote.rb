@@ -1,5 +1,7 @@
 ActiveAdmin.register Vote do
 
+ permit_params :yes_vote, :no_vote, :user_id, :image_id
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
