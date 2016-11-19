@@ -33,7 +33,7 @@
           Image
         </label>
 
-        <input type="text" id="image_id" name="image_id" placeholder="Image" class="form-control" value="<%= @comment.image_id %>">
+        <%= select_tag(:image_id, options_from_collection_for_select(Image.all, :id, :user_id, @comment.image_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for content -->
