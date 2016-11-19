@@ -1,5 +1,7 @@
 ActiveAdmin.register Image do
 
+ permit_params :user_id, :price, :description, :response_time, :image_url
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
