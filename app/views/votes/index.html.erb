@@ -20,8 +20,20 @@
       <tr>
         <td><%= vote.yes_vote %></td>
         <td><%= vote.no_vote %></td>
-        <td><%= vote.user.email %></td>
-        <td><%= vote.image.user_id %></td>
+        <td>
+          <% if vote.user.present? %>
+            <a href="/users/<%= vote.user.id %>">
+              <%= vote.user.email %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if vote.image.present? %>
+            <a href="/images/<%= vote.image.id %>">
+              <%= vote.image.user_id %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/votes/<%= vote.id %>" class="btn btn-primary">Show</a>
           

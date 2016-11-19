@@ -19,7 +19,13 @@
 
       <% @images.each do |image| %>
       <tr>
-        <td><%= image.user.email %></td>
+        <td>
+          <% if image.user.present? %>
+            <a href="/users/<%= image.user.id %>">
+              <%= image.user.email %>
+            </a>
+          <% end %>
+        </td>
         <td><%= image.price %></td>
         <td><%= image.description %></td>
         <td><%= image.response_time %></td>

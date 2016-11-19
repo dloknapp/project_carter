@@ -12,10 +12,22 @@
       <dd><%= @vote.no_vote %></dd>
 
       <dt>User</dt>
-      <dd><%= @vote.user_id %></dd>
+      <dd>
+        <% if @vote.user.present? %>
+          <a href="/users/<%= @vote.user_id %>">
+            <%= @vote.user.email %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Image</dt>
-      <dd><%= @vote.image_id %></dd>
+      <dd>
+        <% if @vote.image.present? %>
+          <a href="/images/<%= @vote.image_id %>">
+            <%= @vote.image.user_id %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

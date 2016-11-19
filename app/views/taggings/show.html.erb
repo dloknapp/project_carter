@@ -6,10 +6,22 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Image</dt>
-      <dd><%= @tagging.image_id %></dd>
+      <dd>
+        <% if @tagging.image.present? %>
+          <a href="/images/<%= @tagging.image_id %>">
+            <%= @tagging.image.user_id %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Tag</dt>
-      <dd><%= @tagging.tag_id %></dd>
+      <dd>
+        <% if @tagging.tag.present? %>
+          <a href="/tags/<%= @tagging.tag_id %>">
+            <%= @tagging.tag.name %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
