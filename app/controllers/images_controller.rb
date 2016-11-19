@@ -16,6 +16,9 @@ class ImagesController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @vote = Vote.new
+    @tagging = Tagging.new
     @image = Image.find(params[:id])
 
     render("images/show.html.erb")
