@@ -1,0 +1,1 @@
+{"name":"Project Carter","repository":"https://github.com/dloknapp/project_carter","env":{"CLOUDINARY_CLOUD_NAME":{"required":true},"CLOUDINARY_API_KEY":{"required":true},"CLOUDINARY_API_SECRET":{"required":true},"ROLLBAR_ACCESS_TOKEN":{"required":true}}}
