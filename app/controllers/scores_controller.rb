@@ -1,4 +1,14 @@
 class ScoresController < ApplicationController
+  before_action :current_user_must_be_score_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_score_user
+    score = Score.find(params[:id])
+
+    unless current_user == score.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @scores = Score.all
 
