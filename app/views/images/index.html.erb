@@ -23,7 +23,7 @@
         <td><%= image.price %></td>
         <td><%= image.description %></td>
         <td><%= image.response_time %></td>
-        <td><%= image.image_url %></td>
+        <td><img src='<%= image.image_url %>' class='img-responsive'></td>
         <td>
           <a href="/images/<%= image.id %>" class="btn btn-primary">Show</a>
           <a href="/images/<%= image.id %>/edit" class="btn btn-warning">Edit</a>

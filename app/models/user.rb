@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  mount_uploader :avatar_url, AvatarUrlUploader
+
   # Direct associations
 
   has_many   :votes
