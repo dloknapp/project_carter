@@ -1,6 +1,8 @@
 class Image < ApplicationRecord
   # Direct associations
 
+  has_many   :votes
+
   has_many   :taggings
 
   belongs_to :user,
