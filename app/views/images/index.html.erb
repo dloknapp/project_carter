@@ -26,8 +26,11 @@
         <td><img src='<%= image.image_url %>' class='img-responsive'></td>
         <td>
           <a href="/images/<%= image.id %>" class="btn btn-primary">Show</a>
-          <a href="/images/<%= image.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_image/<%= image.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          
+          <% if current_user == image.user %>
+            <a href="/images/<%= image.id %>/edit" class="btn btn-warning">Edit</a>
+            <a href="/delete_image/<%= image.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <% end %>
         </td>
       </tr>
       <% end %>

@@ -26,12 +26,14 @@
       <a href="/images" class="btn btn-primary">
         Back
       </a>
-      <a href="/images/<%= @image.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_image/<%= @image.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
+      <% if current_user == @image.user %>
+        <a href="/images/<%= @image.id %>/edit" class="btn btn-warning">
+          Edit
+        </a>
+        <a href="/delete_image/<%= @image.id %>" class="btn btn-danger" rel="nofollow">
+          Delete
+        </a>
+      <% end %>
     </div>
   </div>
 </div>
